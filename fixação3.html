@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fixação 3</title>
+</head>
+<body>
+    <script>
+        var lojaCalçados = {
+            nome:'cal_c_pé',
+            produtos:['nike', 'addidas', 'vizzano','Via Marte', 'dakota','moleca','vans'],
+            genero:['masculino', 'feminino'],
+            tamanhos:['34','35','36','37','38','39','40','41','42','43'],
+
+            //função para saber se pussui marca
+            possuiMarca: function(){
+                if(this.produtos.includes(produto)){
+                    return 'Possui marca em estoque'
+                }
+                else{
+                    return 'Não possui marca em estoque'
+                }
+            },
+            //função para saber se possui genero
+            possuiGenero: function(){
+                if (this.genero.includes(generos)){
+                    return 'Não possui'
+                }
+                else {
+                    return 'possui'
+                }
+            },
+            //função para saber se possui tamanho
+            possuiTamanho: function(){
+                if(this.tamanhos.includes(tamanho)){
+                    return 'Tamanho e estoque'
+                }
+                else{
+                    return 'Sem tamanho no estoque'
+                }
+            },
+        }
+        var cal_c_pé = lojaCalçados;
+        console.log(cal_c_pé.possuiMarca())
+
+        var cal_c_pé = lojaCalçados;
+        console.log(cal_c_pé.possuiGenero())
+
+        var cal_c_pé = lojaCalçados;
+        console.log(cal_c_pé.possuiTamanho())
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercico de fixação2</title>
+</head>
+
+<body>
+    <script>
+        //objeto clinica (nome, procedimentos [], numeroClientes, cidade[])
+        var clinica = {
+            nome: 'Estetica e podologia cadastrinho',
+            procedimentos: ['corte cabelo', 'pintura cabelo', 'podologia', 'massagem', 'heiki'],
+            numeroClientes: 200,
+            cidade: ['Toledo', 'Foz do Iguaçu', 'Cascavel', 'Marechal'],
+            //funcão para saber se tal clinica realiza tal procedimento
+            realizaProcedimento: function (procedimento) {
+                if (this.procedimentos.includes(procedimento)) {
+                    return 'Possui Procedimento';
+                }
+                else {
+                    return 'Não possui procedimento';
+                }
+            },
+            //função para saber a clinica atende em tal cidade
+            atendeCidade: function (cidades) {
+                if (this.cidades.includes(cidade)) {
+                    return 'Atende';
+                }
+                else {
+                    return 'Não atende'
+                }
+            }
+        }               
+        //objeto clientes (nome, idade, procedimentosJaFeitos [] jaRealizouProcedimento())
+        var clientes = {
+            nome:'Pedro',
+            idade:30,
+            procedimentosJaFeitos:['corte cabelo', 'heiki'],
+            //função para saber se o paciente já realizou procediemnto indicado
+            jaRealizouProcedimento: function(procedimentos){
+                if (this.procedimentosJaFeitos.includes(procedimento)){
+                    return 'Já realizou procedimento';
+                    }
+                    else {
+                        return 'Não realizou procedimento';                    
+                    }
+                }
+            }
+        // objeto loja (produto, cores, tamanhos[])
+        var loja = {
+            produto:'sapatilha',
+            cores:['azul', 'amarelo', 'verde', 'laranja'],
+            tamanhos:[35, 36, 37, 38,],
+            possuiCor: function(cor){
+                if (this.cores.includes(cor)){
+                    return 'Possui cor em estoque'
+                }
+                else{
+                    return 'Não possui cor em estoque'
+                }
+            },
+            possuiTamanho: function(tamanho){
+                if (this.tamanhos.includes(tamanho)){
+                    return 'Possui Tamanho em estoque'
+                }
+                else {
+                    return 'Não possui tamnho em estoque'
+                }
+            }
+            //atribui esse objeto loja a uma variável cristoRei 
+            //verifica se ela possui a cor 'azul'via console.log()
+            
+        }
+        var cristoRei=loja;
+        console.log(cristoRei.possuiCor('azul'))
+
+        var lojaDoDunha=loja;
+        console.log(lojaDoDunha.possuiCor('amarelo'))
+
+
+      
+
+    </script>
+</body>
+
+</html>

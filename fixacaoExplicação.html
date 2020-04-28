@@ -1,0 +1,111 @@
+<html>
+
+<head>
+    <title>Fixação</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    
+    // objetos -> elemento que representa uma entidade
+    // ex: cadeira, mesa, computador, cachorro
+    // é representado por {}
+    // sempre que depois do = começar com {}
+    var cachorro = {}
+
+    // atributos -> são as características do objeto, possui tipo [number, string, boolean, function, array, float]
+    var cachorro = {
+        //atributos do cachorro
+        nome: 'Geleia',
+        idade: 5,
+        isFemale: false,
+        peso: 4.5,
+        olhos: 'abertos',
+
+        // comportamentos
+        latir: function() { 
+            console.log('au');
+        },
+
+        acordar: function () {
+            olhos = 'abertos';
+        },
+
+        dormir: function () {
+            olhos = 'fechados'
+        }
+    }
+
+    console.log(cachorro);    // { nome: 'Geleia', idade: 5, isFemale: false, peso: 4.5, latir: function }
+    console.log(cachorro.nome); /// Geleia
+    console.log(cachorro.peso); /// 4.5
+
+    var geleia = cachorro
+
+    console.log(geleia.peso); /// 4.5
+
+
+    // arrays -> são listas
+    // é representado por []
+    // os elementos devem ser separados por vírgula
+    var jogadas = ['Par, Impar', 'Impar, Par'];
+    var cachorros = [geleia, cachorro, geleia, cachorro, geleia, cachorro]
+    var numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+
+    for (var i = 0; i < numeros.length; i++) {
+
+    }
+    
+    // funções -> são comportamentos, elas dão ação aos objetos
+    // representadas por ()
+    // sempre que eu quiser CHAMAR ou INVOCAR um comportamento, precisa utilizar os parênteses
+    console.log(geleia.latir); /// function () { console.log('au'); }
+    console.log(geleia.latir()); /// au
+
+
+    // parâmetros -> variáveis externas da função, ou seja, são variáveis que a função não tem como obter, 
+    // ou não tem essa responsabilidade
+    geleia.lamber = function (humano) {
+        console.log('lamb' + humano.nome)
+    }
+
+    var humano = { nome: 'Blane' }
+
+    console.log(
+        geleia.lamber(humano)
+    );  /// lamb Blane
+
+    // escopo -> é a área onde um objeto, variável, etc pode atuar, normalmente encapsulado por chaves {}, mas pode ser um arquivo
+    
+    // retornos -> são os comportamentos ou atributos que a função RETORNA para quem a chamou
+    // funções podem ou não possuir RETORNOS
+    // quando uma função não possui nenhum retorno ela é chamada de void
+    // regra: o return vai SEMPRE SER A ÚLTIMA INSTRUÇÃO DA FUNÇÃO
+    geleia.estaAcordado = function () {
+        if (geleia.olhos === 'abertos') {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    // você deve sempre CAPTURAR o retorno de uma função que não seja vazia, ou seja, atribuir o seu RETURN a uma variável
+    var geleiaIsAwake = geleia.estaAcordado();
+    console.log(geleiaIsAwake);  /// true
+
+    geleia.dormir();
+    console.log(geleia.estaAcordado()); /// false
+
+    console.log(geleia.dormir()); /// undefined
+
+    // variáveis
+
+    // atribuições -> atribuir valores ou comportamentos a uma variável ou objeto
+
+    // sobrescrita -> é REATRIBUIR um valor ou comportamento a uma variável ou objeto
+    geleia.peso = 5;
+    
+    </script>
+</body>
+
+</html>

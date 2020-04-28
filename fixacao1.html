@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // objeto aluno (nome, nascimento, sexo, cursos [], idade(), estaMatriculado(curso))
+            var aluno = {
+                nome:'Pablo',
+                nascimento:1989,
+                sexo: 'masculino',
+                cursos:['a', 'b', 'c', 'd'],
+                idade: function () {
+                    return 2020 - this.nascimento
+                },
+                estaMatriculado: function(curso){
+                    if (this.cursos.includes(curso)){
+                        return 'sim';
+                    }
+                    else {
+                        return 'não';
+                    }                   
+                }
+            }
+
+        // objeto  curso (nome, professor, horario, alunos [], estaMatriculado(aluno) )
+            var curso = {
+                nomeCurso:'javascript',
+                professor:'luiz',
+                horario: 07,
+                alunos:['Pablo', 'Sthefany', 'João', 'Ariane'],
+                estaMatriculado: function (aluno){
+                    if (this.alunos.includes(aluno)) {
+                        return 'matriculado';
+                    }
+                    else {
+                        return 'não matriculado'
+                    }
+                }
+            },
+                
+            
+
+        // objeto  aula (curso, professor, aunosPresentes [], alunoEstaNaAula(aluno))
+        var aula ={
+            curso: 'javascript',
+            professor: 'luiz',
+            alunosPresentes: ['Pablo', 'Sthefany', 'João', 'Ariane'],
+            alunoEstaNaAula: function(aluno){
+                if (this.alunosPresentes.includes(aluno)){
+                    return 'presente'
+                }
+                else {
+                    return 'falta'
+                }
+                    
+            }
+        }
+    </script>
+</body>
+</html>
