@@ -6,8 +6,19 @@
     <title>fixação 3</title>
 </head>
 <body>
+    <label for="produto">Buscar Marca</label>
+    <input type="text" id="marca">
+    <button onclick="buscaProduto();"></button>
+
+    <label for="genero">Buscar Genero</label>
+    <input type="text" id="genero">
+    <button onclick="buscaGenero();"></button>
+
+    <label for="tamanho">Buscar Tamanho</label>
+    <input type="text" id="Tamanho">
+    <button onclick="buscaTamanho();"></button>
     <script>
-        var lojaCalçados = {
+            var lojaCalçados = {
             nome:'cal_c_pé',
             produtos:['nike', 'addidas', 'vizzano','Via Marte', 'dakota','moleca','vans'],
             genero:['masculino', 'feminino'],
@@ -41,14 +52,19 @@
                 }
             },
         }
-        var cal_c_pé = lojaCalçados;
-        console.log(cal_c_pé.possuiMarca())
+         function buscaProduto() {
+            var marca = document.getElementById('marca').value;
+            alert(cal_c_pé.possuiMarca(marca));
+        }
+        function buscaGenero() {
+            var genero = document.getElementById('genero').value;
+            alert(cal_c_pé.possuiGenero(genero));
+        }
+        function buscaTamanho() {
+            var tamanho = document.getElementById('tamanho').value;
+            alert(cal_c_pé.possuiTamanho(tamanho));
+        };
 
-        var cal_c_pé = lojaCalçados;
-        console.log(cal_c_pé.possuiGenero())
-
-        var cal_c_pé = lojaCalçados;
-        console.log(cal_c_pé.possuiTamanho())
     </script>
 </body>
 </html>
