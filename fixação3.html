@@ -17,16 +17,18 @@
     <label for="tamanho">Buscar Tamanho</label>
     <input type="text" id="Tamanho">
     <button onclick="buscaTamanho();"></button>
+
+
     <script>
-            var lojaCalçados = {
+        var lojaCalçados = {
             nome:'cal_c_pé',
             produtos:['nike', 'addidas', 'vizzano','Via Marte', 'dakota','moleca','vans'],
             genero:['masculino', 'feminino'],
             tamanhos:['34','35','36','37','38','39','40','41','42','43'],
 
             //função para saber se pussui marca
-            possuiMarca: function(){
-                if(this.produtos.includes(produto)){
+            possuiMarca: function(produtos){
+                if(this.produtos.includes(produtos)){
                     return 'Possui marca em estoque'
                 }
                 else{
@@ -34,8 +36,8 @@
                 }
             },
             //função para saber se possui genero
-            possuiGenero: function(){
-                if (this.genero.includes(generos)){
+            possuiGenero: function(genero){
+                if (this.genero.includes(genero)){
                     return 'Não possui'
                 }
                 else {
@@ -43,7 +45,7 @@
                 }
             },
             //função para saber se possui tamanho
-            possuiTamanho: function(){
+            possuiTamanho: function(tamanhos){
                 if(this.tamanhos.includes(tamanho)){
                     return 'Tamanho e estoque'
                 }
@@ -52,7 +54,9 @@
                 }
             },
         }
-         function buscaProduto() {
+        var cal_c_pé = lojaCalçados;
+
+        function buscaProduto() {
             var marca = document.getElementById('marca').value;
             alert(cal_c_pé.possuiMarca(marca));
         }
@@ -65,6 +69,14 @@
             alert(cal_c_pé.possuiTamanho(tamanho));
         };
 
+       // console.log(cal_c_pé.possuiMarca())
+
+
+       /* var cal_c_pé = lojaCalçados;
+        console.log(cal_c_pé.possuiGenero())
+
+        var cal_c_pé = lojaCalçados;
+        console.log(cal_c_pé.possuiTamanho())*/
     </script>
 </body>
 </html>
