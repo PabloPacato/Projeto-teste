@@ -4,26 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fixação 3</title>
+    <h1>Formulário de busca</h1>
 </head>
 <body>
-    <label for="produto">Buscar Marca</label>
+    
+    <div>
+        <ul>
+       <h2><li><label for="produto">Buscar Marca</label></li></h2>
     <input type="text" id="marca">
-    <button onclick="buscaProduto();"></button>
+    <button onclick="buscaProduto();">Buscar</button><br>
+        </ul>
+    </div>
 
-    <label for="genero">Buscar Genero</label>
-    <input type="text" id="genero">
-    <button onclick="buscaGenero();"></button>
+    <div>
+        <ul>
+            <h2><li><label for="generos">Buscar Genero</label></li></h2>
+    <input type="text" id="generos">
+    <button onclick="buscaGenero();">Buscar</button><br>
+        </ul>
+    </div>
 
-    <label for="tamanho">Buscar Tamanho</label>
-    <input type="text" id="Tamanho">
-    <button onclick="buscaTamanho();"></button>
-
+    <div>
+        <ul>
+        <h2><li><label for="tamanhos">Buscar Tamanho</label></li></h2>
+    <input type="text" id="tamanhos">
+    <button onclick="buscaTamanho();">Buscar</button><br>
+        </ul>
+    </div>
 
     <script>
-        var lojaCalçados = {
+        var lojaCalcados = {
             nome:'cal_c_pé',
             produtos:['nike', 'addidas', 'vizzano','Via Marte', 'dakota','moleca','vans'],
-            genero:['masculino', 'feminino'],
+            generos:['masculino', 'feminino'],
             tamanhos:['34','35','36','37','38','39','40','41','42','43'],
 
             //função para saber se pussui marca
@@ -36,8 +49,8 @@
                 }
             },
             //função para saber se possui genero
-            possuiGenero: function(genero){
-                if (this.genero.includes(genero)){
+            possuiGenero: function(generos){
+                if (this.generos.includes(generos)){
                     return 'Não possui'
                 }
                 else {
@@ -46,27 +59,27 @@
             },
             //função para saber se possui tamanho
             possuiTamanho: function(tamanhos){
-                if(this.tamanhos.includes(tamanho)){
-                    return 'Tamanho e estoque'
+                if(this.tamanhos.includes(tamanhos)){
+                    return 'Tamanho em estoque'
                 }
                 else{
                     return 'Sem tamanho no estoque'
                 }
-            },
+            }
         }
-        var cal_c_pé = lojaCalçados;
+        var cal_c_pe = lojaCalcados;
 
         function buscaProduto() {
             var marca = document.getElementById('marca').value;
-            alert(cal_c_pé.possuiMarca(marca));
+            alert(cal_c_pe.possuiMarca(marca));
         }
         function buscaGenero() {
-            var genero = document.getElementById('genero').value;
-            alert(cal_c_pé.possuiGenero(genero));
+            var genero = document.getElementById('generos').value;
+            alert(cal_c_pe.possuiGenero(generos));
         }
         function buscaTamanho() {
-            var tamanho = document.getElementById('tamanho').value;
-            alert(cal_c_pé.possuiTamanho(tamanho));
+            var tamanho = document.getElementById('tamanhos').value;
+            alert(cal_c_pe.possuiTamanho(tamanho));
         };
 
        // console.log(cal_c_pé.possuiMarca())
