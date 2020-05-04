@@ -1,35 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busca Paciente</title>
-</head>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Busca Paciente</title>
+    </head>
 
-    <body>
-        <script>
-            <div>
-                <ul>
-                <h2>
-                <label for="paciente">Buscar paciente</label>
+    <body background="https://doctorfeet.com.br/wp-content/uploads/2019/05/podologia-o-que-e.jpg">
+       
+        <div>
+            <h2>
+                <label for="paciente">Buscar Paciente</label>
                 <input type="text" id="paciente"></input>
                 <button onclick="buscaPaciente();">Buscar</button>
-                </h2>
-                </ul>
-            </div>
+            </h2>
+        </div>
 
-            <div>
-            
-            </div>
+        <div>
+            <h2>
+                <label for="clinica">Buscar Clinica</label>
+                <input type="text" id="clinica"></input>
+                <button onclick="buscaClinica();">Buscar</button>
+            </h2>
+        </div>
+
+        <div>
+            <h2>
+                <label for="cidade">Buscar Cidade</label>
+                <input type="text" id="cidade"></input>
+                <button onclick="buscaCidade();">Buscar</button>
+            </h2>
+        </div>
 
 
-            <div>
-            </div>
+        <div>
+            <h2>
+                <label for="tratamento">Buscar Tratamento</label>
+                <input type="text" id="tratamento"></input>
+                <button onclick="buscaTratamento();">Buscar</button>
+            </h2>
+        </div>
+       
+        <script>
 
+            var clinicaEstetica = {
+                pacientes:['joão', 'pedro','maria','joana','marcia',],
+                clinicas: ['01','02','03','04'],
+                cidades: ['toledo', 'cascavel', 'marechal', 'assis'],
+                tratamentos: ['heiki', 'podologia', 'massoterapia'],
 
-            <div>
-            </div>
-        </script>
+                possuiPaciente: function(pacientes){
+                    if(this.pacientes.includes(pacientes)){
+                        return 'Paciente cadastrado'
+                    }
+                    else{
+                        return 'Paciente não cadastrado'
+                    }
+                },
+                possuiClinica: function(clinicas){  
+                    if(this.clinicas.includes(clinicas)){
+                        return 'Clinica Cadastrada'
+                    }
+                    else{
+                        return 'Clinica não cadastrada'
+                    }
+                },
+                possuiCidade: function(cidades){  
+                    if(this.cidades.includes(cidades)){
+                        return 'Cidade cadastrada'
+                    }
+                    else{
+                        return 'cidade não cadastrada'
+                    }
+                },
+                possuiTratamento: function(tratamentos){  
+                    if(this.tratamentos.includes(tratamentos)){
+                        return 'tratamento cadastrado'
+                    }
+                    else{
+                        return 'tratamento não cadastrado'
+                    }
+                },
+               
+            }
+             var estetica = clinicaEstetica;
         
+             function buscaPaciente() {
+                    var paciente = document.getElementById('paciente').value;
+                    alert(estetica.possuiPaciente(paciente));
+                }
+             function buscaClinica() {
+                    var clinica = document.getElementById('clinica').value;
+                    alert(estetica.possuiClinica(clinica))
+            }
+             function buscaCidade(){
+                var cidade = document.getElementById('cidade').value;
+                    alert(estetica.possuiCidade(cidade))
+             }
+             function buscaTratamento(){
+                var tratamento = document.getElementById('tratamento').value;
+                    alert(estetica.possuiTratamento(tratamento))
+             }
+
+        </script>
     </body>
 </html>
